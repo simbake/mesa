@@ -244,7 +244,7 @@ if _vulkan_drivers.contains('auto')
   endif
 elif _vulkan_drivers.contains('all')
    # Build every vulkan driver regardless of architecture.
-   _vulkan_drivers = ['amd', 'intel', 'intel_hasvk', 'swrast',
+   _vulkan_drivers = ['wrapper','amd', 'intel', 'intel_hasvk', 'swrast',
                       'freedreno', 'panfrost', 'virtio', 'broadcom',
                       'imagination-experimental', 'microsoft-experimental',
                       'nouveau', 'asahi', 'gfxstream']
