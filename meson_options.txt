@@ -203,7 +203,7 @@ option(
   'vulkan-drivers',
   type : 'array',
   value : ['auto'],
-  choices : ['auto', 'amd', 'broadcom', 'freedreno', 'intel', 'intel_hasvk',
+  choices : ['auto', 'wrapper', 'amd', 'broadcom', 'freedreno', 'intel', 'intel_hasvk',
              'panfrost', 'swrast', 'virtio', 'imagination-experimental',
              'microsoft-experimental', 'nouveau', 'asahi', 'gfxstream',
              'all'],
