@@ -8,7 +8,6 @@
 #include "util/os_file.h"
 #include "vk_util.h"
 
-#include <android/hardware_buffer.h>
 #include <vndk/hardware_buffer.h>
 #include <sys/mman.h>
 #include <sys/ioctl.h>
