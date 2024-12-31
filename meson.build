@@ -226,7 +226,7 @@ if _vulkan_drivers.contains('auto')
     if host_machine.cpu_family().startswith('x86')
       _vulkan_drivers = ['amd', 'intel', 'intel_hasvk', 'nouveau', 'swrast']
     elif ['arm', 'aarch64'].contains(host_machine.cpu_family())
-      _vulkan_drivers = ['swrast', 'intel']
+      _vulkan_drivers = ['swrast', 'intel', 'wrapper']
     elif ['mips', 'mips64', 'ppc', 'ppc64', 'riscv32', 'riscv64'].contains(host_machine.cpu_family())
       _vulkan_drivers = ['amd', 'swrast']
     elif ['loongarch64'].contains(host_machine.cpu_family())
@@ -244,12 +244,12 @@ if _vulkan_drivers.contains('auto')
   endif
 elif _vulkan_drivers.contains('all')
    # Build every vulkan driver regardless of architecture.
-   _vulkan_drivers = ['amd', 'intel', 'intel_hasvk', 'swrast',
+   _vulkan_drivers = ['wrapper', 'amd', 'intel', 'intel_hasvk', 'swrast',
                       'freedreno', 'panfrost', 'virtio', 'broadcom',
                       'imagination-experimental', 'microsoft-experimental',
                       'nouveau', 'asahi', 'gfxstream']
 endif
-
+with_wrapper_vk = _vulkan_drivers.contains('wrapper')
 with_intel_vk = _vulkan_drivers.contains('intel')
 with_intel_hasvk = _vulkan_drivers.contains('intel_hasvk')
 with_amd_vk = _vulkan_drivers.contains('amd')
